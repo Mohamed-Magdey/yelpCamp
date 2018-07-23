@@ -13,7 +13,8 @@ const commentRoutes    = require("./routes/comments"),
       campgroundRoutes = require("./routes/campgrounds"),
       indexRoutes      = require("./routes/index");
 
-mongoose.connect("mongodb://127.0.0.1:27017/yelp_camp", { useNewUrlParser: true });
+// mongoose.connect("mongodb://127.0.0.1:27017/yelp_camp", { useNewUrlParser: true });
+mongoose.connect("mongodb://mohamed:ragabmohame6@ds243501.mlab.com:43501/db_yelpcamp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
