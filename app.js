@@ -13,8 +13,9 @@ const commentRoutes    = require("./routes/comments"),
       campgroundRoutes = require("./routes/campgrounds"),
       indexRoutes      = require("./routes/index");
 
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
-// mongoose.connect("mongodb://mohamed:ragabmohame6@ds243501.mlab.com:43501/db_yelpcamp", { useNewUrlParser: true });
+const url = process.env.DATABASEURL || "mongodb://127.0.0.1:27017/yelp_camp";
+
+mongoose.connect(url, { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -46,4 +47,4 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT || 3000, console.log("listening on http://127.0.0.1:3000"));
+app.listen(process.env.PORT || 8080, console.log("listening on http://127.0.0.1:3000"));
