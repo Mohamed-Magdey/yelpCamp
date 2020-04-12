@@ -18,7 +18,7 @@ const authRoutes       = require('./routes/index'),
       commentRoutes    = require('./routes/comments');
 
 // seedDB();
-mongoose.connect(process.env.URI, {
+mongoose.connect(process.env.DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
@@ -61,6 +61,7 @@ app.use('/campgrounds/:id/comments', commentRoutes);
 
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
+let port = process.env.PORT || 8080;
+const listener = app.listen(port, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
