@@ -3,7 +3,7 @@ YelpCamp
 
 **YelpCamp** is a fullstack project to practise on node.js
 
-Preview [yelpCamp](https://glitch.com/about).
+Preview [yelpCamp](https://yelpcamp-20-20.herokuapp.com/).
 
 
 Frontend Technologies
