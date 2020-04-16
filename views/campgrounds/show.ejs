@@ -17,8 +17,10 @@
           <h4 class="float-right">$<%= campground.price %>/night</h4>
           <h4><a href=""><%= campground.name %></a></h4>
           <p><%= campground.description %></p>
-          <p><em>Submitted By <%= campground.author.username %></em></p>
-          <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser.isAdmin) { %>
+          <p>
+            <em>Submitted By <a href="/users/<%= campground.author.id %>"><%= campground.author.username %></a></em>
+          </p>
+          <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
             <a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
             <form class="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
               <button class="btn btn-danger">DELETE</button>
@@ -39,7 +41,7 @@
                 <p>
                   <%= comment.text %>
                 </p>
-                <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser.isAdmin) { %>
+                <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
                   <a class="btn btn-sm btn-warning" 
                      href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">
                     Edit
