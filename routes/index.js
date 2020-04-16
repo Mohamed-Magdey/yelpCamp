@@ -15,13 +15,16 @@ router
   })
   .post(function(req, res) {
     let newUser = new User({username: req.body.username});
+    if(req.body.adminCode === 'testSecret') {
+      newUser.isAdmin = true;
+    }
     User.register(newUser, req.body.password, function(err, user) {
       if(err) {
         req.flash("error", err.message);
         return res.render("register");
       }
       passport.authenticate("local")(req, res, function() {
-        req.flash("success", "Welcome to YelpCamp" + user.username);
+        req.flash("success", "Welcome to YelpCamp " + user.username);
         res.redirect("/campgrounds");
       });
     });
