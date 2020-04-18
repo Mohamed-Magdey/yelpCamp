@@ -1,4 +1,5 @@
 dependencies:
+  async: 3.2.0
   body-parser: 1.19.0
   connect-flash: 0.1.1
   ejs: 3.0.2
@@ -8,6 +9,7 @@ dependencies:
   method-override: 3.0.0
   mongodb: 3.5.5
   mongoose: 5.9.7
+  nodemailer: 6.4.6
   passport: 0.4.1
   passport-local: 1.0.0
   passport-local-mongoose: 6.0.1
@@ -25,6 +27,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
+  /async/3.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==
   /bl/2.2.0:
     dependencies:
       readable-stream: 2.3.7
@@ -540,6 +546,13 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-0L9FvHG3nfnnmaEQPjT9xhfN4ISk0A8/2j4M37Np4mcDesJjHgEUfgPhdCyZuFI954tjokaIj/A3NdpFNdEh4Q==
+  /nodemailer/6.4.6:
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    requiresBuild: true
+    resolution:
+      integrity: sha512-/kJ+FYVEm2HuUlw87hjSqTss+GU35D4giOpdSfGp7DO+5h6RlJj7R94YaYHOkoxu1CSaM0d3WRBtCzwXrY6MKA==
   /on-finished/2.3.0:
     dependencies:
       ee-first: 1.1.1
@@ -833,6 +846,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  async: ^3.2.0
   body-parser: 1.19.0
   connect-flash: 0.1.1
   ejs: 3.0.2
@@ -842,6 +856,7 @@ specifiers:
   method-override: 3.0.0
   mongodb: 3.5.5
   mongoose: 5.9.7
+  nodemailer: ^6.4.6
   passport: 0.4.1
   passport-local: 1.0.0
   passport-local-mongoose: 6.0.1
