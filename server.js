@@ -21,7 +21,8 @@ const url = process.env.DB || "mongodb://127.0.0.1:27017/yelp_camp";
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useCreateIndex: true
 });
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true }));
