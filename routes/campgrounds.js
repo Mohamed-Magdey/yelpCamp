@@ -8,7 +8,7 @@ router
     .get(function(req, res) { // INDEX - show all campgrounds
         Campground.find({}, function(err, campgrounds) {
           if (err) return console.log(err);
-          res.render("campgrounds/index", {campgrounds});
+          res.render("campgrounds/index", {campgrounds, page: 'campgrounds'});
         });
     })
   .post(middleware.isLoggedIn, function(req, res) { // CREATE - add new campground
