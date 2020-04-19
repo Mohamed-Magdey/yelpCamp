@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
 router
   .route("/register")
   .get(function(req, res) {
-    res.render("register");
+    res.render("register", {page: 'register'});
   })
   .post(function(req, res) {
     let {username, firstName, lastName, avatar, email} = req.body;
@@ -39,7 +39,7 @@ router
 router
   .route("/login")
   .get(function(req, res) {
-    res.render("login");
+    res.render("login", {page: 'login'});
   })
   .post(passport.authenticate("local", {
     successRedirect: "/campgrounds",
@@ -185,7 +185,7 @@ router.get('/users/:id', function(req, res) {
         req.flash('error', 'Something went wrong.');
         return res.redirect('/');
       }
-      res.render('users/show', {user: foundUser, campgrounds});
+      res.render('users/show', {user: foundUser, campgrounds, page: 'users/show'});
     })
   });
 });
