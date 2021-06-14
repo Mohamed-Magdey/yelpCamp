@@ -20,5 +20,5 @@ Backend Technologies
 --------------------
 - Server (Node.js/express)
 - Database (MongoDB/mongoose)
-- Authonication (passport.js)
+- Authenication (passport.js)
 - Security (Helmet.js)
